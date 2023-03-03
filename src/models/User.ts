@@ -5,7 +5,10 @@ export interface IUser {
     phoneNumber: string;
     email: string;
     category: [string];
-    url: string;
+    imgURL: string;
+    department: string;
+    courseTitle: string;
+    about: string;
 }
 
 export interface IUserModel extends IUser, Document {}
@@ -31,7 +34,19 @@ const UserSchema: Schema = new Schema(
         },
         category: {
             type: [String],
-            enum: ['Admin', 'Lecturer', 'Student', 'Intending Student']
+            enum: ['Admin', 'Lecturer', 'Student', 'Guest']
+        },
+        department: {
+            type: String,
+            trim: true
+        },
+         courseTitle: {
+            type: String,
+            trim: true
+        },
+          about: {
+            type: String,
+            trim: true
         }
     },
     {

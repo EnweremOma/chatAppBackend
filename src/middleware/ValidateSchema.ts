@@ -23,13 +23,21 @@ export const Schema = {
             name: Joi.string().required(),
             phoneNumber: Joi.string().required(),
             email: Joi.string().required(),
-            category: Joi.string().required()
+            category: Joi.string().required(),
+            imgURL: Joi.string(),
+            department: Joi.string().required(),
+            courseTitle: Joi.string().required(),
+            about: Joi.string()
         }),
         update: Joi.object<IUser>({
             name: Joi.string().required(),
             phoneNumber: Joi.string().required(),
             email: Joi.string().required(),
-            category: Joi.string().required()
+            category: Joi.string().required(),
+            imgURL: Joi.string(),
+            department: Joi.string().required(),
+            courseTitle: Joi.string().required(),
+            about: Joi.string()
         })
     },
     message: {
