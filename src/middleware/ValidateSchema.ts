@@ -20,7 +20,8 @@ export const ValidateSchema = (schema: ObjectSchema) => {
 export const Schema = {
     user: {
         create: Joi.object<IUser>({
-            name: Joi.string().required(),
+            firstName: Joi.string().required(),
+            lastName: Joi.string().required(),
             phoneNumber: Joi.string().required(),
             email: Joi.string().required(),
             category: Joi.string().required(),
@@ -30,7 +31,8 @@ export const Schema = {
             about: Joi.string()
         }),
         update: Joi.object<IUser>({
-            name: Joi.string().required(),
+            firstName: Joi.string().required(),
+            lastName: Joi.string().required(),
             phoneNumber: Joi.string().required(),
             email: Joi.string().required(),
             category: Joi.string().required(),

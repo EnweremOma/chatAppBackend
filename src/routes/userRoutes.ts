@@ -4,10 +4,10 @@ import controller from '../controllers/UserController';
 
 const router = express.Router();
 
-router.post('/create', ValidateSchema(Schema.user.create), controller.createUser);
-router.get('/get/:userId', controller.getUser);
-router.get('/get/', controller.getAll);
-router.put('/update/:userId', ValidateSchema(Schema.user.update), controller.updateUser);
-router.delete('/delete/:userId', controller.deleteUser);
+router.post('/createUser', ValidateSchema(Schema.user.create), controller.createUser);
+router.get('/getSingleUser/:userId', controller.getUser);
+router.get('/getAllUsers/', controller.getAll);
+router.put('/updateUser/:userId', ValidateSchema(Schema.user.update), controller.updateUser);
+router.delete('/deleteUser/:userId', controller.deleteUser);
 
 export = router;

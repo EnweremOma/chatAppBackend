@@ -1,10 +1,11 @@
 import mongoose, { Document, Schema } from 'mongoose';
 
 export interface IUser {
-    name: string;
+    firstName: string;
+    lastName: string;
     phoneNumber: string;
     email: string;
-    category: [string];
+    category: string;
     imgURL: string;
     department: string;
     courseTitle: string;
@@ -15,7 +16,11 @@ export interface IUserModel extends IUser, Document {}
 
 const UserSchema: Schema = new Schema(
     {
-        name: {
+        firstName: {
+            type: String,
+            trim: true
+        },
+        lastName: {
             type: String,
             trim: true
         },
@@ -33,7 +38,7 @@ const UserSchema: Schema = new Schema(
             type: String
         },
         category: {
-            type: [String],
+            type: String,
             enum: ['Admin', 'Lecturer', 'Student', 'Guest']
         },
         department: {
